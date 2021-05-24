@@ -1,0 +1,58 @@
+OWASP
+-----------------------------------------------------------------------
+
+**Injection
+
+What is this?
+-------------This is hostile data sent to an interpeter (HTML webpage)
+
+How does it happen?
+------------- SQL,NoSQL, queries,ORM queries.
+
+How to fix it?
+-------------Keep data seperate from commands.
+
+
+**Insufficient Logging
+What is this?
+---------------Attackers typically rely on the lack of monitoring and logging to achieve their goals and to
+		those goals without being detected. In 2016, it was found that on average it takes 191 days to
+		to perform a identity breach.
+
+How to fix this?
+----------------Ensure that all login, access control failures and server-side validation failures are logged accurately
+		and effciently to identify any suspiciuos activity.
+
+**Cross-Site Scripting(XSS)
+
+What is this?
+-------------------
+Three Types of XSS
+<<>>Reflected XSS- attacker executes HTML and JS changees. User are usually left vunerable after following untrusted spam links etc.
+
+<<>>Stored XSS- this is when an API stores unsanitized user input that is viewed at a later time.
+(physical destruction, hashing data, masking data-)
+
+<<>>DOM XSS- JavaScript f/w, Single-Page apps (SPAs), and APIs that include attacker-controlled data. 
+              For instance DOM node replacement, key logging, trojin login panels
+
+
+How to fix this?
+------------------Seperate untrusted data from active browser content
+		  Regular and routine destruction of physical data, hashing data(algoritms that hide data and its structure)
+		  or masking data(copied data is obsucred)
+
+
+**Sensitive Data Exposure
+
+What is this?
+-----------------------Stealing of clear text data and keys from server while data is in transit or at rest.
+			This is also done on a browser as well, not just a server.
+			This includes the failure to properly encrypt Sensitive Personal Information(PII).
+
+How to prevent this?
+-----------------------Encrypt all sensitive data at rest and data thats in transit.
+		       Identify exactly which data types of data is sensitive according to laws and regulations.
+		       use up-to-date/strong algorithms and protocols
+		       Encrypt data in transit by using TLS(Transport Layer Security) and HSTS(Strict Transport Security)
+		       Don't stored sensitve data unneccessarily.			
